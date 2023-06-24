@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_app_logo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/app_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toStartOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginStart="8dp"
+            android:ellipsize="marquee"
+            android:fontFamily="serif"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_app_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Translate" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_info"
+            app:layout_constraintBottom_toBottomOf="@id/iv_app_logo"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_app_logo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_head"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_translate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="0.5dp"
+            android:ellipsize="marquee"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="Uzbek - Karakalpak"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_transliterate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#CCCCCC"
+            app:layout_constraintBottom_toBottomOf="@id/tv_translate"
+            app:layout_constraintEnd_toStartOf="@id/tv_transliterate"
+            app:layout_constraintStart_toEndOf="@id/tv_translate"
+            app:layout_constraintTop_toTopOf="@id/tv_translate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_transliterate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0.5dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="marquee"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="Kirill - Latin"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_translate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_input"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:fontFamily="serif"
+            android:gravity="start|top"
+            android:hint="Enter a text"
+            android:inputType="textMultiLine"
+            android:maxLength="100"
+            android:maxLines="10"
+            android:padding="12dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_translate"
+            app:layout_constraintTop_toBottomOf="@id/tv_translate" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_custom_border"
+            android:backgroundTint="@color/official_app_color_blue"
+            android:paddingHorizontal="28dp"
+            android:paddingVertical="8dp"
+            android:src="@drawable/ic_translate"
+            app:layout_constraintBottom_toTopOf="@id/et_output"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_input"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_output"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_edit_text"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:maxLength="100"
+            android:maxLines="10"
+            android:padding="12dp"
+            app:layout_constraintBottom_toTopOf="@id/ll_change_type"
+            app:layout_constraintTop_toBottomOf="@id/btn_translate" />
+
+        <LinearLayout
+            android:id="@+id/ll_change_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_custom_border"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_output">
+
+            <TextView
+                android:id="@+id/tv_lang_from"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:ellipsize="marquee"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:layout_margin="2dp"
+                android:text="Uzbek"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_change"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_change" />
+
+            <TextView
+                android:id="@+id/tv_lang_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:ellipsize="marquee"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:layout_margin="2dp"
+                android:text="Karakalpak"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
